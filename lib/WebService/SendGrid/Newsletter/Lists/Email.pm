@@ -50,3 +50,4 @@ sub add {
     return $self->{sgn}->_send_request('lists/email/add', %args);
 }
 
+1;

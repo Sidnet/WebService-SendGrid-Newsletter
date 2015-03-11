@@ -49,3 +49,4 @@ sub delete {
     $self->{sgn}->_send_request('recipients/delete', %args);
 }
 
+1;

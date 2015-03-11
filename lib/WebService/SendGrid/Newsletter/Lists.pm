@@ -57,3 +57,4 @@ sub email {
     return $self->{email};
 }
 
+1;

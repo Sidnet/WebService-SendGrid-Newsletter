@@ -49,3 +49,4 @@ sub delete {
     $self->{sgn}->_send_request('schedule/delete', %args);
 }
 
+1;
