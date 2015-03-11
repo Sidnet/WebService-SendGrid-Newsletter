@@ -8,7 +8,7 @@ WebService::SendGrid::Newsletter - Perl interface to SendGrid Newsletter API
 
 =head1 VERSION
 
-version 0.01
+version 0.001
 
 =head1 SYNOPSIS
 
@@ -187,9 +187,44 @@ Returns the code of the last response from the API.
 
 Returns the data structure retrieved with the last response from the API.
 
+=for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders metacpan
+
+=head1 SUPPORT
+
+=head2 Bugs / Feature Requests
+
+Please report any bugs or feature requests through the issue tracker
+at L<https://github.com/oiami/WebService-SendGrid-Newsletter/issues>.
+You will be notified automatically of any progress on your issue.
+
+=head2 Source Code
+
+This is open source software.  The code repository is available for
+public review and contribution under the terms of the license.
+
+L<https://github.com/oiami/WebService-SendGrid-Newsletter>
+
+  git clone https://github.com/oiami/WebService-SendGrid-Newsletter.git
+
 =head1 AUTHOR
 
 Michal Wojciechowski <odyniec@cpan.org>
+
+=head1 CONTRIBUTORS
+
+=for stopwords Michal Wojciechowski oiami
+
+=over 4
+
+=item *
+
+Michal Wojciechowski <odyniec@odyniec.net>
+
+=item *
+
+oiami <pattawanna@gmail.com>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 
