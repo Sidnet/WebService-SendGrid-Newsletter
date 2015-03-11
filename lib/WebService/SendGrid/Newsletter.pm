@@ -3,6 +3,7 @@ use warnings;
 package WebService::SendGrid::Newsletter;
 
 # ABSTRACT: Perl interface to SendGrid Newsletter API
+# VERSION
 
 use Carp;
 use HTTP::Request::Common;
@@ -111,7 +112,7 @@ sub _send_request {
 sub _check_required_args {
     my ($self, $required_args, %args) = @_;
 
-    foreach my $arg (keys %$required_args) {
+    foreach my $arg ( @{$required_args} ) {
         if (!exists $args{$arg}) {
             carp "Required parameter '$arg' is not defined";
         }
