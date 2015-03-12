@@ -65,13 +65,7 @@ sub new {
     my $self = {};
     bless($self, $class);
 
-    if (!defined $args{api_user}) {
-        carp "Required parameter 'api_user' is not defined";
-    }
-    
-    if (!defined $args{api_key}) {
-        carp "Required parameter 'api_key' is not defined";
-    }
+    $self->_check_required_args([ qw( api_user api_key ) ], %args);
 
     $self->{api_user} = $args{api_user};
     $self->{api_key} = $args{api_key};
@@ -114,7 +108,7 @@ sub _check_required_args {
 
     foreach my $arg ( @{$required_args} ) {
         if (!exists $args{$arg}) {
-            carp "Required parameter '$arg' is not defined";
+            croak "Required parameter '$arg' is not defined";
         }
     }
 }
