@@ -212,7 +212,7 @@ Michal Wojciechowski <odyniec@cpan.org>
 
 =head1 CONTRIBUTORS
 
-=for stopwords Michal Wojciechowski oiami
+=for stopwords Michal Wojciechowski Pattawan Kaewduangdee
 
 =over 4
 
@@ -222,7 +222,7 @@ Michal Wojciechowski <odyniec@odyniec.net>
 
 =item *
 
-oiami <pattawanna@gmail.com>
+Pattawan Kaewduangdee <pattawanna@gmail.com>
 
 =back
 
