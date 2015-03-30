@@ -5,14 +5,15 @@ package WebService::SendGrid::Newsletter::Test::Schedule;
 use strict;
 use warnings;
 
+use lib 't/lib';
+
 use DateTime;
-use Test::Class;
 use Test::More;
 use Test::Exception;
 
 use WebService::SendGrid::Newsletter;
 
-use parent 'Test::Class';
+use parent 'WebService::SendGrid::Newsletter::Test::Base';
 
 my $sgn;
 my $list_name       = 'subscribers_test';
@@ -60,15 +61,6 @@ sub shutdown : Test(shutdown) {
     $sgn->delete(name => $newsletter_name);
 }
 
-sub expect_success {
-    my ($self, $test_name) = @_;
-
-    is($sgn->{last_response}->{message}, 'success',
-        $test_name . ' results in a successful response');
-    is($sgn->{last_response_code}, 200,
-        $test_name . ' results in a successful response code');
-}
-
 sub schedule : Tests {
     my ($self) = @_;
 
@@ -83,10 +75,10 @@ sub schedule : Tests {
     $dt->add(minutes => 2);
 
     $sgn->schedule->add(name => $newsletter_name, at => "$dt");
-    $self->expect_success('Scheduling a specific delivery time');
+    $self->expect_success($sgn, 'Scheduling a specific delivery time');
 
     $sgn->schedule->add(name => $newsletter_name, after => 5);
-    $self->expect_success('Scheduling delivery in a number of minutes');
+    $self->expect_success($sgn, 'Scheduling delivery in a number of minutes');
 
     throws_ok
         {
@@ -108,7 +100,7 @@ sub schedule : Tests {
 
 
     $sgn->schedule->delete(name => $newsletter_name);
-    $self->expect_success('Deleting a scheduled delivery');
+    $self->expect_success($sgn, 'Deleting a scheduled delivery');
 }
 
 Test::Class->runtests;
