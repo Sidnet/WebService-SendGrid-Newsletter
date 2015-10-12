@@ -1,6 +1,6 @@
 requires "Carp" => "0";
 requires "HTTP::Request::Common" => "0";
-requires "HTTP::Tiny" => "0";
+requires "HTTP::Tiny" => "0.056";
 requires "JSON" => "0";
 requires "parent" => "0";
 requires "perl" => "5.006";
@@ -13,6 +13,7 @@ on 'test' => sub {
   requires "File::Spec" => "0";
   requires "File::Temp" => "0";
   requires "IO::Handle" => "0";
+  requires "IO::Socket::SSL" => "0";
   requires "IPC::Open3" => "0";
   requires "String::Random" => "0";
   requires "Test::Class" => "0";
